@@ -1,0 +1,64 @@
+/*Services Begins*/
+
+#services {
+    height: max-content;
+    width: 100%;
+    padding: 0 40px;
+}
+
+.services-header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-header h2 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.services {
+    height: max-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.service-card {
+    height: 168px;
+    width: 225px;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.service-card-top {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card-img {
+    height: 70px;
+    width: 70px;
+}
+
+.service-card-bottom {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card-bottom h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+/*Services Ends*/

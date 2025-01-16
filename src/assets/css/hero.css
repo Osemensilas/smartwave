@@ -1,0 +1,82 @@
+/*hero begins*/
+
+#hero {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--black);
+    opacity: 0.4;
+}
+
+.advert-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    height: max-content;
+    width: 80%;
+}
+
+.advert-container {
+    position: relative;
+    height: max-content;
+    width: 100%;
+    z-index: 1;
+}
+
+.advert-container h1 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--white);
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.advert-container h2 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--white);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-cta-container {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-cta {
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    background: var(--brown);
+    color: var(--black);
+    transition: 0.3s ease-in-out;
+}
+
+
+/*hero Ends*/

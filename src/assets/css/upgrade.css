@@ -1,0 +1,31 @@
+.price-container-for-packages {
+    height: max-content;
+    width: 100%;
+    padding: 20px;
+}
+
+.price-container-for-packages-header {
+    height: max-content;
+    width: 100%;
+    padding: 20 0 40px 0;
+}
+
+.price-container-for-packages-header h2 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.upgrade-btn-container {
+    height: max-content;
+    width: 100%;
+    padding: 40px 0 20px 0;
+}
+
+.upgrade-btn {
+    padding: 15px 10px;
+    background: var(--black);
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+}

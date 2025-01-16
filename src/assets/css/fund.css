@@ -1,0 +1,30 @@
+.user-fund-dashboard {
+    width: 100%;
+    height: max-content;
+}
+
+.payment-method-container {
+    height: max-content;
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.payment-method {
+    padding: 10px 5px;
+    width: 140px;
+    height: 90px;
+    border-radius: 5px;
+    margin: 0 20px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.payment-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}

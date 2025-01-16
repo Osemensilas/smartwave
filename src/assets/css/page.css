@@ -1,0 +1,343 @@
+ .fixed-page-container {
+     width: 100vw;
+     height: 100vh;
+ }
+ 
+ .dashboard {
+     margin-top: 80px;
+     position: relative;
+     width: 100vw;
+     height: calc(100vh - 80px);
+     display: flex;
+ }
+ 
+ .dashboard-left {
+     position: fixed;
+     width: 20%;
+     height: max-content;
+     max-height: calc(100vh - 80px);
+     background: var(--black);
+     overflow-y: scroll;
+     scrollbar-width: thin;
+ }
+ 
+ .dashbord-right {
+     position: fixed;
+     width: 80%;
+     height: calc(100vh - 80px);
+     top: 80px;
+     left: 20%;
+     overflow-y: scroll;
+     scrollbar-width: thin;
+     transition: 0.3s ease-in-out;
+ }
+ 
+ .dashboard-header h3 {
+     color: var(--white);
+     font-size: 20px;
+     font-weight: 400;
+ }
+ 
+ .hamburger-container {
+     height: 30px;
+     width: 30px;
+     position: relative;
+     cursor: pointer;
+ }
+ 
+ .hamburger {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     height: 3px;
+     width: 25px;
+     background: var(--white);
+ }
+ 
+ .hamburger::after {
+     content: '';
+     position: absolute;
+     top: 5px;
+     left: 0;
+     height: 3px;
+     width: 25px;
+     background: #ffffff;
+ }
+ 
+ .hamburger::before {
+     content: '';
+     position: absolute;
+     top: -5px;
+     left: 0;
+     height: 3px;
+     width: 25px;
+     background: #ffffff;
+ }
+ 
+ .user-container {
+     height: max-content;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     padding: 30px 10px;
+     border-bottom: 1px solid #c0c0c0;
+ }
+ 
+ .user-left {
+     height: 40px;
+     width: 40px;
+     margin: 0 0 0 0;
+ }
+ 
+ .user-img-container {
+     height: 100%;
+     width: 100%;
+ }
+ 
+ .user-img {
+     height: 100%;
+     width: 100%;
+     border-radius: 100%;
+ }
+ 
+ .user-right {
+     height: max-content;
+     display: none;
+     transition: 0.3 ease-in-out;
+ }
+ 
+ .user-right-top {
+     height: max-content;
+     margin-bottom: 5px;
+ }
+ 
+ .user-right.active {
+     display: block;
+     transition: 0.3 ease-in-out;
+ }
+ 
+ .user-right-top h3 {
+     color: var(--white);
+     font-size: 18px;
+     font-weight: 300;
+ }
+ 
+ .user-right-bottom {
+     height: max-content;
+ }
+ 
+ .user-right-bottom p {
+     color: var(--white);
+     font-size: 16px;
+     font-weight: 300;
+ }
+ 
+ .navigation-container {
+     height: max-content;
+     width: 100%;
+     padding: 0 10px;
+ }
+ 
+ .greeting {
+     display: none;
+     transition: 0.5s ease-in-out;
+ }
+ 
+ .greeting.active {
+     display: block;
+     transition: 0.5s ease-in-out;
+ }
+ 
+ .nav-content {
+     height: calc(100% - 180px);
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
+     padding: 20px 0 10px 0;
+     overflow-y: scroll;
+     scrollbar-width: thin;
+ }
+ 
+ .nav-anchor {
+     height: max-content;
+     width: 90%;
+     border-radius: 5px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 15px 10px;
+     margin-bottom: 10px;
+     text-decoration: none;
+     transition: 0.3s ease-in-out;
+ }
+ 
+ .nav-anchor.active {
+     background: var(--btnBlack);
+ }
+ 
+ .nav-anchor:hover {
+     background: var(--btnBlack);
+ }
+ 
+ .nav-anchor.active {
+     background: var(--btnBlack);
+ }
+ 
+ .nav-anchor.active .anchor-text {
+     color: var(--white);
+ }
+ 
+ .nav-anchor:hover .anchor-text {
+     color: var(--white);
+ }
+ 
+ .anchor-text {
+     color: #c0c0c0;
+     font-size: 17px;
+     font-weight: 300;
+     display: none;
+     transition: 0.3s ease-in-out;
+ }
+ 
+ .anchor-text.active {
+     display: block;
+ }
+ 
+ .nav-anchor.active i {
+     color: var(--white);
+ }
+ 
+ .nav-anchor:hover i {
+     color: var(--white);
+ }
+ 
+ .nav-anchor i {
+     font-size: 20px;
+     color: #c0c0c0;
+     transition: 0.3s ease-in-out;
+ }
+ 
+ .dashboard-right {
+     position: fixed;
+     width: 80%;
+     height: calc(100vh - 80px);
+     top: 80px;
+     left: 20%;
+     overflow-y: scroll;
+     scrollbar-width: thin;
+     transition: 0.3s ease-in-out;
+ }
+ 
+ @media only screen and (max-width: 767px) {
+     .dashboard-right {
+         width: 100%;
+         height: calc(-80px + 100vh);
+         left: 0;
+     }
+     .client-dashboard-header h2 {
+         font-size: 20px;
+     }
+     .wallet-summary-container {
+         height: max-content;
+         width: 100%;
+         background: var(--white);
+         box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 30px;
+         margin: 20px;
+         padding: 10px;
+         display: flex;
+     }
+     .wallet-container-right {
+         width: max-content;
+         height: max-content;
+         margin: 0 10px 0 0;
+     }
+     .dashboard-purchase-container {
+         justify-content: center;
+     }
+     .client-history-container {
+         width: 95%;
+     }
+     .client-history-container {
+         padding: 0px 5px 20px;
+     }
+     .history-table-content td {
+         font-size: 14px;
+     }
+     .dashboard-header h3 {
+         display: none;
+     }
+     .header-left {
+         display: flex;
+         height: 100%;
+         width: 20%;
+         align-items: center;
+         background: transparent;
+     }
+     .user-container {
+         height: 80px;
+         width: 100%;
+         display: none;
+         align-items: center;
+         transition: 0.3s ease-in-out;
+     }
+     .user-container.active {
+         display: flex;
+         transition: 0.3s ease-in-out;
+     }
+     .dashboard-left {
+         margin: 0;
+         top: 0;
+         left: -65%;
+         width: 65%;
+         transition: 0.3s ease-in-out;
+     }
+     #header.active {
+         left: 65%;
+     }
+     .dashbord-right.active {
+         left: 65%;
+     }
+     .dashbord-left.active {
+         display: block;
+         top: 0;
+         margin: 0;
+         left: 0;
+         width: 65%;
+         height: max-content;
+         max-height: 100vh;
+     }
+     .dashboard-header {
+         height: max-content;
+         width: 100%;
+     }
+     .header-content {
+         padding: 0 10px 0 0;
+     }
+     .hamburger {
+         background: var(--black);
+     }
+     .hamburger::after {
+         background: var(--black);
+     }
+     .hamburger::before {
+         background: var(--black);
+     }
+     .hamburger.active {
+         background: var(--white);
+     }
+     .hamburger.active::after {
+         background: var(--white);
+     }
+     .hamburger.active::before {
+         background: var(--white);
+     }
+     .logout-btn {
+         display: none;
+     }
+     .header-content {
+         justify-content: flex-end;
+     }
+ }

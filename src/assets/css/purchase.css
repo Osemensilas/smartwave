@@ -1,0 +1,46 @@
+.dashhbord-purchase {
+    height: max-content;
+    width: 100%;
+}
+
+.dashboard-purchase-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dashboard-purchase-card {
+    height: 125px;
+    width: 200px;
+    background: var(--white);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    margin: 20px 20px 20px 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.purchase-card-top {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purchase-cardimg {
+    height: 40px;
+    width: 40px;
+}
+
+.purchase-card-bottom {
+    height: max-content;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.purchase-card-bottom p {
+    text-align: center;
+    font-size: 18px;
+}

@@ -1,0 +1,89 @@
+.purchase-dashboard.active {
+    display: none;
+}
+
+.verify-container {
+    display: none;
+}
+
+.verify-container.active {
+    display: block;
+    height: max-content;
+    width: 100%;
+    padding: 20px;
+}
+
+.verify-form-container {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    height: max-content;
+    width: 450px;
+    padding: 0 20px;
+}
+
+.verify-header {
+    height: max-content;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #c0c0c0;
+    margin-bottom: 20px;
+}
+
+.verify-header h2 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.verify-content {
+    height: max-content;
+    width: 100%;
+}
+
+.verify-details {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    width: 100%;
+}
+
+.verify-details label {
+    margin: 5px 0;
+    color: var(--black);
+}
+
+.verify-detail {
+    height: 40px;
+    width: 100%;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.verify-continue-btn {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.edit-btn {
+    padding: 10px 5px;
+    background: var(--brown);
+    font-size: 17px;
+    border-radius: 5px;
+    color: var(--white);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.continue-btn {
+    padding: 10px 5px;
+    background: var(--black);
+    font-size: 17px;
+    border-radius: 5px;
+    color: var(--white);
+    text-decoration: none;
+}
