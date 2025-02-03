@@ -69,6 +69,9 @@
     background: var(--btnBlack);
     padding: 10px 5px;
     border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 .logout-btn i {

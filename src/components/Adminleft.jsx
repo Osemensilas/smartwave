@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {Link} from "react-router-dom";
+import { useState } from "react";
 import maleImg from "../assets/imgs/man.png";
-import axios from "axios";
 
-const Mainleft = () => {
+const Adminleft = () => {
 
     const [mainLeft, setMainLeft] = useState("main-left");
     const [anchorText, setAnchorText] = useState("anchor-text");
@@ -11,10 +10,6 @@ const Mainleft = () => {
     const [userRight, setUserRight] = useState('user-right');
     const [hamburger, setHamburger] = useState('hamburger');
     const [user, setUser] = useState('user-container');
-    const [username, setUsername] = useState('');
-    const [accountBal, setAccountBal] = useState("0");
-
-    let browserSession = sessionStorage.getItem("session");
 
     const hamClicked = function(){
       if (mainLeft === 'main-left'){
@@ -34,38 +29,6 @@ const Mainleft = () => {
       }
     }
 
-    useEffect(() => {
-
-      const session = { userSession: browserSession };
-
-      const fetchData = async function () {
-          try {
-
-              const response = await axios.post("http://localhost/backends/waves/dashboard.php",
-                  session,
-                  {
-                      headers: {
-                          "Content-Type": "application/json", // Inform PHP that the data is in JSON format
-                      },
-                      withCredentials: true,
-                  }
-              );
-
-              const userDetails = response.data;
-
-              if (userDetails.msg === 'successful'){
-                  setUsername(userDetails.user);
-                  setAccountBal(userDetails.acct_bal);
-              }
-
-          } catch (err) {
-              console.log(err);
-          }
-      }
-          
-      fetchData();
-
-    }, [browserSession]);
     return ( 
         <div className={mainLeft}>
             <div className="header-left">
@@ -84,25 +47,29 @@ const Mainleft = () => {
                 </div>
                 <div className={userRight}>
                   <div className="user-right-top">
-                      <h3> {username} </h3>
+                      <h3> Osemensilas </h3>
                   </div>
                   <div className="user-right-bottom">
-                      <p> Balance: ₦{accountBal} </p>
+                      <p> Balance: ₦125 </p>
                   </div>
                 </div>
             </div>
             <div className="nav-content">
-                <Link to="/upgrade" className="nav-anchor">
-                  <p className={anchorText}>Upgrade Account</p>
-                  <i className="fa fa-level-up"></i>
-                </Link>
-                <Link to="/dashboard" className="nav-anchor">
+                <Link to="/admin_panel/dashboard" className="nav-anchor">
                   <p className={anchorText}>My Dashboard</p>
                   <i className="fa fa-home"></i>
                 </Link>
-                <Link to="/fund-account" className="nav-anchor">
+                <Link to="#" className="nav-anchor">
                   <p className={anchorText}>Fund Account</p>
                   <i className="fa fa-credit-card"></i>
+                </Link>
+                <Link to="/admin_panel/add-data" className="nav-anchor">
+                  <p className={anchorText}>Add Data</p>
+                  <i className="fa fa-home"></i>
+                </Link>
+                <Link to="/admin_panel/add-cable" className="nav-anchor">
+                  <p className={anchorText}>Add Cable</p>
+                  <i className="fa fa-home"></i>
                 </Link>
                 <Link to="/airtime" className="nav-anchor">
                   <p className={anchorText}>Buy Airtime</p>
@@ -128,9 +95,9 @@ const Mainleft = () => {
                   <p className={anchorText}>Notifications</p>
                   <i className="fa fa-bell"></i>
                 </Link>
-              </div>
+            </div>
         </div>
      );
 }
  
-export default Mainleft;
+export default Adminleft;

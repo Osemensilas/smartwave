@@ -83,7 +83,7 @@
     cursor: pointer;
 }
 
-.error {
+.single-error {
     color: var(--error);
 }
 

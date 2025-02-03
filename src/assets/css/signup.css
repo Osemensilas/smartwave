@@ -92,6 +92,29 @@
     margin-bottom: 10px;
 }
 
+.error-container {
+    padding: 5px 5px;
+    width: 100%;
+    height: max-content;
+    border-radius: 5px;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.error-container.active {
+    visibility: visible;
+    background: #ff0000;
+}
+
+.error-container.success {
+    visibility: visible;
+    background: #008000;
+}
+
+.error {
+    color: #ffffff;
+}
+
 @media only screen and (max-width: 767px) {
     .signup-form {
         width: 100%;

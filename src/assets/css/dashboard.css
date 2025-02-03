@@ -201,3 +201,32 @@
 .status-holder.pending {
     color: var(--pending);
 }
+
+.success-container {
+    height: max-content;
+    width: 100%;
+    padding: 15px 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.success-container.success {
+    display: flex;
+    background: #008000;
+}
+
+.success-container.failed {
+    display: flex;
+    background: #ff0000;
+}
+
+.success-container.pending {
+    background: #FDC45C;
+    display: flex;
+}
+
+.success-container p {
+    color: var(--white);
+}

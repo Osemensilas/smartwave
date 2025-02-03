@@ -2,27 +2,59 @@ import Top from "../components/Top";
 import Mainleft from "../components/Mainleft";
 import "../assets/css/airtime.css";
 import { useRef, useState } from "react";
+import axios from "axios";
 
 const Data = () => {
 
+    const [airtelData, setAirtelData] = useState([]);
+
     const plansContainerRef = useRef(null);
-    
-        const [activeNetwork, setActiveNetwork] = useState('');
-        const [planPrice, setPlanPrice] = useState('');
-        
-    
-        const NetworkSelected = function(e){
-    
-            const selectedNetwork = e.target.value;
-    
-            setActiveNetwork(selectedNetwork);
+    let browserSession = sessionStorage.getItem("session");
+
+    const session = { userSession: browserSession };
+
+    const getPrices = async function(){
+        try{
+            let fetchUrl = "http://localhost/backends/waves/fetchdata.php";
+
+            let fetchResponse = await axios.post(fetchUrl, 
+                session, 
+                {
+                    headers: {
+                        "Content-Type" : "application/json",
+                    },
+                    withCredentials: true,
+                }
+            );
+            const dataOptions = fetchResponse.data;
+
+            const airtelValue = dataOptions.airtel;
+            setAirtelData(airtelValue);
+
+            console.log(airtelValue);
+        }catch(error){
+            console.log(error);
         }
+    }
+
+    getPrices();
     
-        const airtelPlan = function(e){
-            const selectPlanPrice = e.target.value;
+    const [activeNetwork, setActiveNetwork] = useState('');
+    const [planPrice, setPlanPrice] = useState('');
     
-            setPlanPrice(selectPlanPrice);
-        }
+
+    const NetworkSelected = function(e){
+
+        const selectedNetwork = e.target.value;
+
+        setActiveNetwork(selectedNetwork);
+    }
+
+    const airtelPlan = function(e){
+        const selectPlanPrice = e.target.value;
+
+        setPlanPrice(selectPlanPrice);
+    }
 
     return ( 
 
@@ -53,13 +85,7 @@ const Data = () => {
                                         <label htmlFor="plan">Airtel Plan</label>
                                         <select name="plan" id="plan1" className="detail" onChange={airtelPlan}>
                                             <option value="">-- Select airtel data plan --</option>
-                                            <option value="200">Airtel Data 500MB (Gift) – 30 Days</option>
-                                            <option value="340">Airtel Data 1GB (Gift) – 30 Days</option>
-                                            <option value="680">Airtel Data 2GB (Gift) – 30 Days</option>
-                                            <option value="1700">Airtel Data 5GB (Gift) – 30 Days</option>
-                                            <option value="3400">Airtel Data 10GB (Gift) – 30 Days</option>
-                                            <option value="5000">Airtel Data 15GB (Gift) – 30 Days</option>
-                                            <option value="6000">Airtel Data 20GB (Gift) – 30 Days</option>
+                                            {airtelData}
                                         </select>
                                         <div className="error"></div>
                                     </div>

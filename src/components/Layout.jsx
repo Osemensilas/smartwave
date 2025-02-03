@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../views/Home";
-import Dashboard from "../views/dashboard";
+import Dashboard from "../views/Dashboard";
 import Airtime from "../views/airtime";
 import Data from "../views/Data";
 import Cable from "../views/Cable";
@@ -11,6 +11,10 @@ import Upgrade from "../views/Upgrade";
 import Signin from "../views/Signin";
 import Signup from "../views/Signup";
 import Fund from "../views/Fund";
+import Index from "../views/admin";
+import Admindash from "../views/admin/Amindash";
+import AddData from "../views/admin/AddData";
+import AddCable from "../views/admin/AddCable";
 
 const Layout = () => {
     return ( 
@@ -30,6 +34,11 @@ const Layout = () => {
                     <Route path="/sign-in" element={<Signin />}></Route>
                     <Route path="/sign-up" element={<Signup />}></Route>
                     <Route path="/fund-account" element={<Fund />}></Route>
+                    <Route path="/admin_panel/" element={<Index />}></Route>
+                    <Route path="/admin_panel/index" element={<Index />}></Route>
+                    <Route path="/admin_panel/dashboard" element={<Admindash />}></Route>
+                    <Route path="/admin_panel/add-data" element={<AddData />}></Route>
+                    <Route path="/admin_panel/add-cable" element={<AddCable/>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
